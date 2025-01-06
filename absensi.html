@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi - SMA Negeri 9 Bengkulu Selatan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Absensi SMA Negeri 9 Bengkulu Selatan</h1>
+        <!-- Menu navigasi -->
+        <nav>
+            <ul>
+                <li><a href="beranda.html">Beranda</a></li>
+                <li><a href="absensi.html">Absensi</a></li>
+                <li><a href="profil.html">Tentang Kami</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Form Absensi</h2>
+        <form id="attendanceForm">
+            <div class="form-group">
+                <label for="name">Nama Siswa:</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required>
+            </div>
+
+            <div class="form-group">
+                <label for="class">Kelas:</label>
+                <select id="class" name="class" required>
+                    <option value="">Pilih Kelas</option>
+                    <option value="X A">X A</option>
+                    <option value="X B">X B</option>
+                    <option value="X C">X C</option>
+                    <option value="XI A">XI A</option>
+                    <option value="XI B">XI B</option>
+                    <option value="XI C">XI C</option>
+                    <option value="XII A">XII A</option>
+                    <option value="XII B">XII B</option>
+                    <option value="XII C">XII C</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status Kehadiran:</label>
+                <select id="status" name="status" required>
+                    <option value="">Pilih Status</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Sakit">Sakit</option>
+                    <option value="Izin">Izin</option>
+                    <option value="Alpa">Alpa</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn" onclick="addAttendance()">Tambah Data</button>
+        </form>
+
+        <h2>Daftar Kehadiran</h2>
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Siswa</th>
+                    <th>Kelas</th>
+                    <th>Status Kehadiran</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data absensi akan muncul di sini -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SMA Negeri 9 Bengkulu Selatan. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        let attendanceData = [];
+
+        function addAttendance() {
+            const name = document.getElementById('name').value;
+            const studentClass = document.getElementById('class').value;
+            const status = document.getElementById('status').value;
+
+            if (name && studentClass && status) {
+                const newRecord = {
+                    name,
+                    class: studentClass,
+                    status,
+                };
+                attendanceData.push(newRecord);
+                renderTable();
+                document.getElementById('attendanceForm').reset();
+            } else {
+                alert('Harap isi semua data!');
+            }
+        }
+
+        function renderTable() {
+            const tableBody = document.querySelector('#attendanceTable tbody');
+            tableBody.innerHTML = '';
+
+            attendanceData.forEach((record, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${record.name}</td>
+                    <td>${record.class}</td>
+                    <td>${record.status}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+    </script>
+</body>
+</html>

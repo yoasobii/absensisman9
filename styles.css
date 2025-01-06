@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d4f7d4; /* Warna hijau untuk background halaman */
+}
+
+header {
+    background-color: #008000; /* Warna hijau untuk header */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #e7ffe7; /* Warna hijau untuk tabel absensi */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #008000; /* Hijau tua untuk header tabel */
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #0047AB;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #003580;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* Gaya untuk menu navigasi */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: #0047AB;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #003580;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+    margin-top: 20px;
+}
+
